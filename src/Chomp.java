@@ -371,33 +371,9 @@ public class Chomp implements Runnable, MouseListener {
         }
     }
 
-    boolean [][] alive = {
-            {true, true, true, true, true, true, true, true, true, true},
-            {true, true, true, true, true, true, true, true, true, true},
-            {true, true, true, true, true, true, true, true, true, true},
-            {true, true, true, true, true, true, true, true, true, true},
-            {true, true, true, true, true, true, true, true, true, true},
-            {true, true, true, true, true, true, true, true, true, true},
-            {true, true, true, true, true, true, true, true, true, true},
-            {true, true, true, true, true, true, true, true, true, true},
-            {true, true, true, true, true, true, true, true, true, true},
-            {true, true, true, true, true, true, true, true, true, true}
-    };
-
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
-        int counter1 = 10;
-        int counter2 = 10;
-        int counter3 = 10;
-        int counter4 = 10;
-        int counter5 = 10;
-        int counter6 = 10;
-        int counter7 = 10;
-        int counter8 = 10;
-        int counter9 = 10;
-        int counter10 = 10;
 
         int row = -1;
         int col = -1;
@@ -411,135 +387,6 @@ public class Chomp implements Runnable, MouseListener {
                 }
             }
         }
-
-        for(int c = 9; c > 0; c--) {
-            for (int r = 0; r < 9; r++) {
-                if (!board[r][c].isAlive) {
-                    alive[r][c] = false;
-                }
-            }
-        }
-
-       /* for(int c = 0; c >9; c++){
-            for(int r= 0; r < 9; r++){
-                if alive
-            }
-        }*/
-
-        for (int i = 9; i > 0; i--){
-            for(int j = 0; j < 9; j++) {
-                System.out.print(alive[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        for(int i = 9; i > 0; i++){
-            for (int j = 0; j < 9; j++){
-                int nextmove1 = counter1;
-
-            }
-        }
-
-        for(int c = 0; c < board.length; c++){
-            for(int r = 0; r <board[c].length; r++){
-                if (!board[r][c].isAlive){
-
-                    if (c == 0){
-                        if (counter1 > 0){
-                            counter1--;
-                        }
-                    }
-
-                    if(c == 1){
-                        if (counter2 > 0){
-                            counter2--;
-                        }
-                    }
-
-                    if (c == 2){
-                        if (counter3 > 0){
-                            counter3--;
-                        }
-                    }
-
-                    if (c == 3){
-                        if (counter4 > 0){
-                            counter4--;
-                        }
-                    }
-
-                    if (c == 4){
-                        if (counter5 > 0){
-                            counter5--;
-                        }
-                    }
-
-                    if (c == 5){
-                        if (counter6 > 0){
-                            counter6--;
-                        }
-                    }
-
-                    if (c == 6){
-                        if (counter7 > 0){
-                            counter7--;
-                        }
-                    }
-
-                    if (c == 7){
-                        if (counter8 > 0){
-                            counter8--;
-                        }
-                    }
-
-                    if (c == 8){
-                        if (counter9 > 0){
-                            counter9--;
-                        }
-                    }
-
-                    if (c == 9){
-                        if (counter10 > 0){
-                            counter10--;
-                        }
-                    }
-
-                    //System.out.println("Alive row: " + r + " Alive column: " + c);
-                    //System.out.println("board length: " + board[0]);
-
-
-                }
-            }
-        }
-
-        int nextMove1 = 3; //a
-        int nextMove2 = 3; //b
-        int nextMove3 = 3; //c
-
-        for(int c1 = nextMove3-1; c1 >= 0; c1--) {
-            nextMove3 = c1;
-            System.out.println("Next possible moves: " + nextMove1 + "," + nextMove2 + "," + nextMove3);
-        }
-
-        for(int c1 = nextMove2-1; c1 >= 0; c1--){
-            nextMove2 = c1;
-            System.out.println("Next possible moves; " + nextMove1 + "," + nextMove2 + "," + nextMove3);
-        }
-
-        for (int c1 = nextMove1-1; c1 > 0; c1--){
-            nextMove1 = c1;
-            System.out.println("Next possible moves: " + nextMove1 + "," + nextMove2 + "," + nextMove3);
-        }
-
-        if (nextMove1 != 2 && nextMove2 != 1 || nextMove1 != 1){
-            System.out.println("Winning");
-        }
-        else{
-            System.out.println("Lose");
-        }
-
-        System.out.println(counter1 + "," + counter2 + "," + counter3 + "," + counter4 + "," + counter5 + "," + counter6 + "," + counter7 + "," + counter8 + "," + counter9 + "," + counter10);
-
 
         if (row >= 0 && col >= 0 && board[row][col].isAlive) {
             //chip is alive
