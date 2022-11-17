@@ -80,23 +80,25 @@ public class MyPlayer {
         int nextMove3 = 0;
 
         ArrayList <String> loseBoards = new ArrayList <String> ();
-        int[] loseBoards2 = new int[10];
-        loseBoards.add("100");
-        loseBoards.add("210");
-        loseBoards2[0] = 100;
-        loseBoards2[1] = 210;
-
+        loseBoards.add("100"); //why still able to identify lose boards without this?
         System.out.println(loseBoards);
 
-        for(int a = 3; a > 0; a--) {
-            for (int b = a; b >= 0; b--) {
-                for (int c = b; c >= 0; c--){
+
+        ArrayList <String> nextLoseBoards = new ArrayList <String>();
+        ArrayList <String> nextWinBoards = new ArrayList <String>();
+
+
+        for(int a = 1; a < 4; a++) {
+            for (int b = 0; b <= a; b++) {
+                for (int c = 0; c <= b; c++){
 
                     System.out.println("\n" + a + "," + b + "," + c);
 
                     counter1 = a;
                     counter2 = b;
                     counter3 = c;
+
+                    String counter = String.valueOf(a) + b + c;
 
                     boolean tempState = false;
                     boolean state = false;
@@ -106,33 +108,31 @@ public class MyPlayer {
                         nextMove2 = counter2;
                         nextMove3 = i;
 
-                        if(i < counter2) {
-                            nextMove2 = i;
-                        }
-
-                        if(i < counter3){
+                        /*if(i < counter3){
                             nextMove3 = i;
-                        }
+                        }*/
 
                         String [] tempBoard = {String.valueOf(nextMove1), String.valueOf(nextMove2), String.valueOf(nextMove3)};
 
-                        String temp1;
-                        String temp2;
-                        String temp3;
+                        for(int x = 0; x < loseBoards.size(); x++){
+                            String temp1;
+                            String temp2;
+                            String temp3;
 
-                        temp1 = String.valueOf(loseBoards.get(0).charAt(0));
-                        temp2 = String.valueOf(loseBoards.get(0).charAt(1));
-                        temp3 = String.valueOf(loseBoards.get(0).charAt(2));
+                            temp1 = String.valueOf(loseBoards.get(x).charAt(0));
+                            temp2 = String.valueOf(loseBoards.get(x).charAt(1));
+                            temp3 = String.valueOf(loseBoards.get(x).charAt(2));
 
-                        if(tempBoard[0].equals(temp1) && tempBoard[1].equals(temp2) && tempBoard[2].equals(temp3)){
-                            tempState = true;
-                            if(tempState == true){
-                                state = true;
+                            if(tempBoard[0].equals(temp1) && tempBoard[1].equals(temp2) && tempBoard[2].equals(temp3)){
+                                tempState = true;
+                                if (tempState == true){
+                                    state = true;
+                                }
                             }
                         }
 
                         //System.out.println(Arrays.toString(tempBoard));
-                        System.out.println(state);
+                        System.out.println(tempState);
                         System.out.println("Next possible moves3: " + nextMove1 + "," + nextMove2 + "," + nextMove3);
                     }
 
@@ -142,9 +142,9 @@ public class MyPlayer {
                         nextMove3 = counter3;
 
 
-                        if(i < counter2) {
+                        /*if(i < counter2) {
                             nextMove2 = i;
-                        }
+                        }*/
 
                         if(i < counter3){
                             nextMove3 = i;
@@ -152,23 +152,26 @@ public class MyPlayer {
 
                         String [] tempBoard = {String.valueOf(nextMove1), String.valueOf(nextMove2), String.valueOf(nextMove3)};
 
-                        String temp1;
-                        String temp2;
-                        String temp3;
+                        for(int x = 0; x < loseBoards.size(); x++){
+                            String temp1;
+                            String temp2;
+                            String temp3;
 
-                        temp1 = String.valueOf(loseBoards.get(0).charAt(0));
-                        temp2 = String.valueOf(loseBoards.get(0).charAt(1));
-                        temp3 = String.valueOf(loseBoards.get(0).charAt(2));
+                            temp1 = String.valueOf(loseBoards.get(x).charAt(0));
+                            temp2 = String.valueOf(loseBoards.get(x).charAt(1));
+                            temp3 = String.valueOf(loseBoards.get(x).charAt(2));
 
-                        if(tempBoard[0].equals(temp1) && tempBoard[1].equals(temp2) && tempBoard[2].equals(temp3)){
-                            tempState = true;
-                            if(tempState == true){
-                                state = true;
+                            if(tempBoard[0].equals(temp1) && tempBoard[1].equals(temp2) && tempBoard[2].equals(temp3)){
+                                tempState = true;
+                                if (tempState == true){
+                                    state = true;
+                                }
                             }
                         }
 
                         //System.out.println(Arrays.toString(tempBoard));
-                        System.out.println(state);
+
+                        System.out.println(tempState);
                         System.out.println("Next possible moves2: " + nextMove1 + "," + nextMove2 + "," + nextMove3);
                     }
 
@@ -187,36 +190,48 @@ public class MyPlayer {
 
                         String [] tempBoard = {String.valueOf(nextMove1), String.valueOf(nextMove2), String.valueOf(nextMove3)};
 
-                        String temp1;
-                        String temp2;
-                        String temp3;
+                        for(int x = 0; x < loseBoards.size(); x++){
+                            tempState = false;
 
-                        temp1 = String.valueOf(loseBoards.get(0).charAt(0));
-                        temp2 = String.valueOf(loseBoards.get(0).charAt(1));
-                        temp3 = String.valueOf(loseBoards.get(0).charAt(2));
+                            String temp1;
+                            String temp2;
+                            String temp3;
 
-                        if(tempBoard[0].equals(temp1) && tempBoard[1].equals(temp2) && tempBoard[2].equals(temp3)){
-                            tempState = true;
-                            if(tempState == true){
-                                state = true;
+                            temp1 = String.valueOf(loseBoards.get(x).charAt(0));
+                            temp2 = String.valueOf(loseBoards.get(x).charAt(1));
+                            temp3 = String.valueOf(loseBoards.get(x).charAt(2));
+
+                            if(tempBoard[0].equals(temp1) && tempBoard[1].equals(temp2) && tempBoard[2].equals(temp3)){
+                                tempState = true;
+                                if (tempState == true){
+                                    state = true;
+                                }
                             }
                         }
 
                         //System.out.println(Arrays.toString(tempBoard));
-                        System.out.println(state);
+                        System.out.println(tempState);
                         System.out.println("Next possible moves1: " + nextMove1 + "," + nextMove2 + "," + nextMove3);
                     }
 
                     if(state == true){
                         System.out.println("winning");
+                        nextLoseBoards.add(String.valueOf(counter));
                     }
                     else{
                         System.out.println("loosing");
+                        nextWinBoards.add(String.valueOf(counter));
+                        loseBoards.add(counter);
                     }
 
                 }
             }
         }
+
+        System.out.println("\n");
+        System.out.println("winning boards: " + nextLoseBoards);
+        System.out.println("losing boards: " + nextWinBoards);
+        System.out.println("lose boards: " + loseBoards);
 
     }
 
