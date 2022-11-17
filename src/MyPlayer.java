@@ -1,8 +1,12 @@
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
 
 public class MyPlayer {
+
+    ArrayList <Board> allBoards = new ArrayList <Board>();
+
     public Chip[][] gameBoard;
     public int[] columns;
 
@@ -86,7 +90,7 @@ public class MyPlayer {
 
         ArrayList <String> nextLoseBoards = new ArrayList <String>();
         ArrayList <String> nextWinBoards = new ArrayList <String>();
-
+        ArrayList <String> nextBoards = new ArrayList <String>();
 
         for(int a = 1; a < 4; a++) {
             for (int b = 0; b <= a; b++) {
@@ -94,12 +98,20 @@ public class MyPlayer {
 
                     System.out.println("\n" + a + "," + b + "," + c);
 
+                    ArrayList <String> nextMoves = new ArrayList<String>();
+                    ArrayList <String> localLoseBoards = new ArrayList <String>();
+
+                    Board currentBoard = new Board(a, b, c);
+
+                    //allBoards.add(new Board(a, b, c));
+
                     counter1 = a;
                     counter2 = b;
                     counter3 = c;
 
                     String counter = String.valueOf(a) + b + c;
 
+                    String tempCounter = "";
                     boolean tempState = false;
                     boolean state = false;
 
@@ -107,6 +119,11 @@ public class MyPlayer {
                         nextMove1 = counter1;
                         nextMove2 = counter2;
                         nextMove3 = i;
+
+                        String nM1 = String.valueOf(nextMove1);
+                        String nM2 = String.valueOf(nextMove2);
+                        String nM3 = String.valueOf(nextMove3);
+                        String next = nM1 + nM2 + nM3;
 
                         /*if(i < counter3){
                             nextMove3 = i;
@@ -125,6 +142,7 @@ public class MyPlayer {
 
                             if(tempBoard[0].equals(temp1) && tempBoard[1].equals(temp2) && tempBoard[2].equals(temp3)){
                                 tempState = true;
+                                localLoseBoards.add(next);
                                 if (tempState == true){
                                     state = true;
                                 }
@@ -132,15 +150,20 @@ public class MyPlayer {
                         }
 
                         //System.out.println(Arrays.toString(tempBoard));
+                        //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
+                        //nextBoards.add(tempCounter);
+                        //System.out.println("next possible moves: " + tempCounter);
+
                         System.out.println(tempState);
                         System.out.println("Next possible moves3: " + nextMove1 + "," + nextMove2 + "," + nextMove3);
+
+                        nextMoves.add(next);
                     }
 
                     for(int i = counter2-1; i >= 0; i--){
                         nextMove1 = counter1;
                         nextMove2 = i;
                         nextMove3 = counter3;
-
 
                         /*if(i < counter2) {
                             nextMove2 = i;
@@ -149,6 +172,11 @@ public class MyPlayer {
                         if(i < counter3){
                             nextMove3 = i;
                         }
+
+                        String nM1 = String.valueOf(nextMove1);
+                        String nM2 = String.valueOf(nextMove2);
+                        String nM3 = String.valueOf(nextMove3);
+                        String next = nM1 + nM2 + nM3;
 
                         String [] tempBoard = {String.valueOf(nextMove1), String.valueOf(nextMove2), String.valueOf(nextMove3)};
 
@@ -163,6 +191,7 @@ public class MyPlayer {
 
                             if(tempBoard[0].equals(temp1) && tempBoard[1].equals(temp2) && tempBoard[2].equals(temp3)){
                                 tempState = true;
+                                localLoseBoards.add(next);
                                 if (tempState == true){
                                     state = true;
                                 }
@@ -173,6 +202,8 @@ public class MyPlayer {
 
                         System.out.println(tempState);
                         System.out.println("Next possible moves2: " + nextMove1 + "," + nextMove2 + "," + nextMove3);
+
+                        nextMoves.add(next);
                     }
 
                     for (int i = counter1-1; i > 0; i--){
@@ -187,6 +218,11 @@ public class MyPlayer {
                         if(i < counter3){
                             nextMove3 = i;
                         }
+
+                        String nM1 = String.valueOf(nextMove1);
+                        String nM2 = String.valueOf(nextMove2);
+                        String nM3 = String.valueOf(nextMove3);
+                        String next = nM1 + nM2 + nM3;
 
                         String [] tempBoard = {String.valueOf(nextMove1), String.valueOf(nextMove2), String.valueOf(nextMove3)};
 
@@ -203,6 +239,7 @@ public class MyPlayer {
 
                             if(tempBoard[0].equals(temp1) && tempBoard[1].equals(temp2) && tempBoard[2].equals(temp3)){
                                 tempState = true;
+                                localLoseBoards.add(next);
                                 if (tempState == true){
                                     state = true;
                                 }
@@ -212,13 +249,45 @@ public class MyPlayer {
                         //System.out.println(Arrays.toString(tempBoard));
                         System.out.println(tempState);
                         System.out.println("Next possible moves1: " + nextMove1 + "," + nextMove2 + "," + nextMove3);
+
+                        nextMoves.add(next);
                     }
 
                     if(state == true){
                         System.out.println("winning");
                         nextLoseBoards.add(String.valueOf(counter));
+
+                        //localNextWinBoards.retainAll(nextMoves);
+
+                        //nextBoards.add(counter);
+
+                        System.out.println("next moves: " + nextMoves);
+                        System.out.println("next best moves: " + localLoseBoards);
+
+                        int nextBestMoveIndex = localLoseBoards.size()-1;
+                        String nextBestMove = localLoseBoards.get(nextBestMoveIndex);
+
+                        System.out.println("next best moves real: " + nextBestMove);
+
+                        currentBoard.counter1 = Integer.parseInt(String.valueOf(counter.charAt(0)));
+                        currentBoard.counter2  = Integer.parseInt(String.valueOf(counter.charAt(1)));
+                        currentBoard.counter3 = Integer.parseInt(String.valueOf(counter.charAt(2)));
+
+                        currentBoard.best1 = Integer.parseInt(String.valueOf(nextBestMove.charAt(0)));
+                        currentBoard.best2 = Integer.parseInt(String.valueOf(nextBestMove.charAt(1)));
+                        currentBoard.best3 = Integer.parseInt(String.valueOf(nextBestMove.charAt(2)));
+                        /*if (nextBoards.size() < 2 ){
+                            String bestMove = nextBoards.get(0);
+                            System.out.println("best move: " + bestMove);
+                        }
+                        else{
+                            String bestMove = nextBoards.get(1);
+                            System.out.println("best move: " + bestMove);
+                        }*/
                     }
                     else{
+                        System.out.println("next moves: " + nextMoves);
+
                         System.out.println("loosing");
                         nextWinBoards.add(String.valueOf(counter));
                         loseBoards.add(counter);
@@ -229,111 +298,9 @@ public class MyPlayer {
         }
 
         System.out.println("\n");
-        System.out.println("winning boards: " + nextLoseBoards);
-        System.out.println("losing boards: " + nextWinBoards);
+        System.out.println("opponent winning boards: " + nextLoseBoards);
+        System.out.println("opponent losing boards: " + nextWinBoards);
         System.out.println("lose boards: " + loseBoards);
 
     }
-
-  /*public int [] toColumns(Chip[][] gb){
-
-        int counter1 = 10;
-        int counter2 = 10;
-        int counter3 = 10;
-        int counter4 = 10;
-        int counter5 = 10;
-        int counter6 = 10;
-        int counter7 = 10;
-        int counter8 = 10;
-        int counter9 = 10;
-        int counter10 = 10;
-
-//        for (int i = 9; i > 0; i--){
-//            for(int j = 0; j < 9; j++) {
-//                System.out.print(alive[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
-
-        for(int i = 9; i > 0; i++){
-            for (int j = 0; j < 9; j++){
-                int nextmove1 = counter1;
-
-            }
-        }
-
-        for(int c = 0; c < gb.length; c++){
-            for(int r = 0; r < gb[c].length; r++){
-                if (!gb[r][c].isAlive){
-
-                    if (c == 0){
-                        if (counter1 > 0){
-                            counter1--;
-                        }
-                    }
-
-                    if(c == 1){
-                        if (counter2 > 0){
-                            counter2--;
-                        }
-                    }
-
-                    if (c == 2){
-                        if (counter3 > 0){
-                            counter3--;
-                        }
-                    }
-
-                    if (c == 3){
-                        if (counter4 > 0){
-                            counter4--;
-                        }
-                    }
-
-                    if (c == 4){
-                        if (counter5 > 0){
-                            counter5--;
-                        }
-                    }
-
-                    if (c == 5){
-                        if (counter6 > 0){
-                            counter6--;
-                        }
-                    }
-
-                    if (c == 6){
-                        if (counter7 > 0){
-                            counter7--;
-                        }
-                    }
-
-                    if (c == 7){
-                        if (counter8 > 0){
-                            counter8--;
-                        }
-                    }
-
-                    if (c == 8){
-                        if (counter9 > 0){
-                            counter9--;
-                        }
-                    }
-
-                    if (c == 9){
-                        if (counter10 > 0){
-                            counter10--;
-                        }
-                    }
-
-                    //System.out.println("Alive row: " + r + " Alive column: " + c);
-                    //System.out.println("board length: " + board[0]);
-
-
-                }
-            }
-        }
-        int[] ans = {counter1, counter2, counter3, counter4, counter5, counter6, counter7, counter8, counter9, counter10};
-        return ans;
-    }*/
 }
