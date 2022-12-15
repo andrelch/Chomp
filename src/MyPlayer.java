@@ -43,13 +43,6 @@ public class MyPlayer {
         int updateMoveRow = 0;
         int updateMoveCol = 0;
 
-        System.out.println("\n");
-        for(int r = 3; r > 0; r--) {
-            for (int c = 3; c > 0; c--) {
-                System.out.println("Move coordinates: " + r + "," + c);
-            }
-        }
-
         /***
          * This code will run just once, when the game opens.
          * Add your code here.
@@ -60,13 +53,33 @@ public class MyPlayer {
 
         System.out.println("MyPlayer Move");
 
-        //gameBoard = pBoard;
-        //toColumns(gameBoard);
+        gameBoard = pBoard;
+        int [] arr = toColumns(gameBoard);
+
+        System.out.println("to cols"+Arrays.toString(arr));
+
+        int current1 = arr[0];
+        int current2 = arr[1];
+        int current3 = arr[2];
+
+       // System.out.println(allBoards);
+
         int column = 0;
         int row = 0;
 
-        row = 1;
-        column = 1;
+        for(int i=0; i<allBoards.size(); i++){
+//            System.out.println(allBoards.get(i).counter1);
+//            System.out.println(allBoards.get(i).counter2);
+//            System.out.println(allBoards.get(i).counter3);
+
+            if(current1 == allBoards.get(i).counter1 && current2 == allBoards.get(i).counter2 && current3 == allBoards.get(i).counter3){
+                System.out.println(allBoards.get(i).xBest + "," + allBoards.get(i).yBest);
+                column = allBoards.get(i).xBest;
+                row = allBoards.get(i).yBest;
+            }
+        }
+
+        //System.out.println("current board: " + Arrays.toString(toColumns(gameBoard)));
 
         /***
          * This code will run each time the "MyPlayer" button is pressed.
@@ -103,6 +116,8 @@ public class MyPlayer {
 
                     Board currentBoard = new Board(a, b, c);
 
+                    System.out.println("OG board:" +currentBoard.counter1 +", "+currentBoard.counter2 +", "+currentBoard.counter3 +"===> "+ currentBoard.best1 +", "+currentBoard.best2 +", "+currentBoard.best3);
+
                     //allBoards.add(new Board(a, b, c));
 
                     counter1 = a;
@@ -111,7 +126,6 @@ public class MyPlayer {
 
                     String counter = String.valueOf(a) + b + c;
 
-                    String tempCounter = "";
                     boolean tempState = false;
                     boolean state = false;
 
@@ -276,6 +290,7 @@ public class MyPlayer {
                         currentBoard.best1 = Integer.parseInt(String.valueOf(nextBestMove.charAt(0)));
                         currentBoard.best2 = Integer.parseInt(String.valueOf(nextBestMove.charAt(1)));
                         currentBoard.best3 = Integer.parseInt(String.valueOf(nextBestMove.charAt(2)));
+                        currentBoard.coordinates();
                         /*if (nextBoards.size() < 2 ){
                             String bestMove = nextBoards.get(0);
                             System.out.println("best move: " + bestMove);
@@ -292,15 +307,125 @@ public class MyPlayer {
                         nextWinBoards.add(String.valueOf(counter));
                         loseBoards.add(counter);
                     }
+                    allBoards.add(currentBoard);
 
                 }
+
             }
+
+        }
+        System.out.println("\n");
+
+        for (Board allBoard : allBoards) {
+            System.out.println(allBoard.counter1 + "," + allBoard.counter2 + "," + allBoard.counter3 + " > " + allBoard.best1 + "," + allBoard.best2 + "," + allBoard.best3);
+            System.out.println(allBoard.xBest + "," + allBoard.yBest);
         }
 
         System.out.println("\n");
         System.out.println("opponent winning boards: " + nextLoseBoards);
         System.out.println("opponent losing boards: " + nextWinBoards);
         System.out.println("lose boards: " + loseBoards);
+    }
 
+    public int [] toColumns(Chip[][] gameBoard){
+
+        int counter1 = 10;
+        int counter2 = 10;
+        int counter3 = 10;
+        /*int counter4 = 10;
+        int counter5 = 10;
+        int counter6 = 10;
+        int counter7 = 10;
+        int counter8 = 10;
+        int counter9 = 10;
+        int counter10 = 10;*/
+
+//        for (int i = 9; i > 0; i--){
+//            for(int j = 0; j < 9; j++) {
+//                System.out.print(alive[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+
+        /*for(int i = 9; i > 0; i++){
+            for (int j = 0; j < 9; j++){
+                int nextmove1 = counter1;
+
+            }
+        }*/
+
+        for(int c = 0; c < gameBoard.length; c++){
+            for(int r = 0; r < gameBoard[c].length; r++){
+                if (!gameBoard[r][c].isAlive){
+
+                    if (c == 0){
+                        if (counter1 > 0){
+                            counter1--;
+                        }
+                    }
+
+                    if(c == 1){
+                        if (counter2 > 0){
+                            counter2--;
+                        }
+                    }
+
+                    if (c == 2){
+                        if (counter3 > 0){
+                            counter3--;
+                        }
+                    }
+
+                    /*if (c == 3){
+                        if (counter4 > 0){
+                            counter4--;
+                        }
+                    }
+
+                    if (c == 4){
+                        if (counter5 > 0){
+                            counter5--;
+                        }
+                    }
+
+                    if (c == 5){
+                        if (counter6 > 0){
+                            counter6--;
+                        }
+                    }
+
+                    if (c == 6){
+                        if (counter7 > 0){
+                            counter7--;
+                        }
+                    }
+
+                    if (c == 7){
+                        if (counter8 > 0){
+                            counter8--;
+                        }
+                    }
+
+                    if (c == 8){
+                        if (counter9 > 0){
+                            counter9--;
+                        }
+                    }
+
+                    if (c == 9){
+                        if (counter10 > 0){
+                            counter10--;
+                        }
+                    }*/
+
+                    //System.out.println("Alive row: " + r + " Alive column: " + c);
+                    //System.out.println("board length: " + board[0]);
+
+
+                }
+            }
+        }
+        int[] ans = {counter1, counter2, counter3, /*counter4, counter5, counter6, counter7, counter8, counter9, counter10*/};
+        return ans;
     }
 }
