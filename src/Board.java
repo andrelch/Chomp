@@ -32,10 +32,6 @@ public class Board {
 
         int [] difference = {difference1, difference2, difference3};
 
-//        for(int i=0; i < difference.length; i++){
-//            if
-//        }
-
         if (difference1 > 0){
             xBest = 0;
             yBest = best1;
