@@ -146,7 +146,7 @@ public class MyPlayer {
                                         for (int i = 0; i <= h; i++){
                                             for (int j = 0; j <= i; j++){
 
-                                                StringBuilder board = new StringBuilder();
+                                                StringBuilder board = new StringBuilder(10);
                                                 board.append(a);
                                                 board.append(b);
                                                 board.append(c);
@@ -181,7 +181,7 @@ public class MyPlayer {
                                                 counter10 = j;
 
                                                 //String counter = String.valueOf(a) + b + c + d + e + f + g + h + i + j;
-                                                StringBuilder counter = new StringBuilder();
+                                                StringBuilder counter = new StringBuilder(10);
                                                 counter.append(a);
                                                 counter.append(b);
                                                 counter.append(c);
@@ -207,81 +207,15 @@ public class MyPlayer {
                                                 nextMove9 = counter9;
                                                 nextMove10 = counter10;
 
-                                                String lB1;
-                                                String lB2;
-                                                String lB3;
-                                                String lB4;
-                                                String lB5;
-                                                String lB6;
-                                                String lB7;
-                                                String lB8;
-                                                String lB9;
-                                                String lB10;
+                                                String lB;
 
-                                                String wB1;
-                                                String wB2;
-                                                String wB3;
-                                                String wB4;
-                                                String wB5;
-                                                String wB6;
-                                                String wB7;
-                                                String wB8;
-                                                String wB9;
-                                                String wB10;
-
-                                                String nM1;
-                                                String nM2;
-                                                String nM3;
-                                                String nM4;
-                                                String nM5;
-                                                String nM6;
-                                                String nM7;
-                                                String nM8;
-                                                String nM9;
-                                                String nM10;
+                                                String wB;
 
                                                 for (int z = counter10 - 1; z >= 0; z--) {
                                                     nextMove10 = z;
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
-
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
-
-                                                    for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
-
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                     /*for (int x = 0; x < loseBoards.size(); x++) {
+                                                        if (Arrays.toString(tempBoard).equals(String.valueOf(loseBoards.get(x)))){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -291,18 +225,41 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        if (Arrays.toString(tempBoard).equals(String.valueOf(winBoards.get(x)))){
+                                                            localWinBoards.add(String.valueOf(next));
+                                                        }
+                                                    }*/
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
+
+                                                    String tempBoard = String.valueOf(next);
+
+                                                    for (int x = 0; x < loseBoards.size(); x++) {
+                                                        lB = String.valueOf(loseBoards.get(x));
+
+                                                        if (tempBoard.equals(lB)){
+                                                            tempState = true;
+                                                            localLoseBoards.add(String.valueOf(next));
+                                                            if (tempState == true) {
+                                                                state = true;
+                                                            }
+                                                        }
+                                                    }
+
+                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                        wB = String.valueOf(winBoards.get(x));
+
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
@@ -327,45 +284,24 @@ public class MyPlayer {
                                                         nextMove10 = z;
                                                     }
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
 
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
+                                                    String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
+                                                        lB = String.valueOf(loseBoards.get(x));
 
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                        if (tempBoard.equals(lB)){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -375,18 +311,9 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        wB = String.valueOf(winBoards.get(x));
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
@@ -414,45 +341,24 @@ public class MyPlayer {
                                                         nextMove9 = z;
                                                     }
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
 
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
+                                                    String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
+                                                        lB = String.valueOf(loseBoards.get(x));
 
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                        if (tempBoard.equals(lB)){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -462,18 +368,9 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        wB = String.valueOf(winBoards.get(x));
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
@@ -504,45 +401,24 @@ public class MyPlayer {
                                                         nextMove8 = z;
                                                     }
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
 
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
+                                                    String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
+                                                        lB = String.valueOf(loseBoards.get(x));
 
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                        if (tempBoard.equals(lB)){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -552,18 +428,9 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        wB = String.valueOf(winBoards.get(x));
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
@@ -597,45 +464,24 @@ public class MyPlayer {
                                                         nextMove7 = z;
                                                     }
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
 
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
+                                                    String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
+                                                        lB = String.valueOf(loseBoards.get(x));
 
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                        if (tempBoard.equals(lB)){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -645,18 +491,9 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        wB = String.valueOf(winBoards.get(x));
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
@@ -693,45 +530,24 @@ public class MyPlayer {
                                                         nextMove6 = z;
                                                     }
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
 
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
+                                                    String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
+                                                        lB = String.valueOf(loseBoards.get(x));
 
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                        if (tempBoard.equals(lB)){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -741,18 +557,9 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        wB = String.valueOf(winBoards.get(x));
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
@@ -792,45 +599,24 @@ public class MyPlayer {
                                                         nextMove5 = z;
                                                     }
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
 
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
+                                                    String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
+                                                        lB = String.valueOf(loseBoards.get(x));
 
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                        if (tempBoard.equals(lB)){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -840,18 +626,9 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        wB = String.valueOf(winBoards.get(x));
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
@@ -894,45 +671,24 @@ public class MyPlayer {
                                                         nextMove4 = z;
                                                     }
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
 
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
+                                                    String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
+                                                        lB = String.valueOf(loseBoards.get(x));
 
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                        if (tempBoard.equals(lB)){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -942,18 +698,9 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        wB = String.valueOf(winBoards.get(x));
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
@@ -999,45 +746,24 @@ public class MyPlayer {
                                                         nextMove3 = z;
                                                     }
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
 
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
+                                                    String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
+                                                        lB = String.valueOf(loseBoards.get(x));
 
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                        if (tempBoard.equals(lB)){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -1047,18 +773,9 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        wB = String.valueOf(winBoards.get(x));
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
@@ -1107,45 +824,24 @@ public class MyPlayer {
                                                         nextMove2 = z;
                                                     }
 
-                                                    nM1 = String.valueOf(nextMove1);
-                                                    nM2 = String.valueOf(nextMove2);
-                                                    nM3 = String.valueOf(nextMove3);
-                                                    nM4 = String.valueOf(nextMove4);
-                                                    nM5 = String.valueOf(nextMove5);
-                                                    nM6 = String.valueOf(nextMove6);
-                                                    nM7 = String.valueOf(nextMove7);
-                                                    nM8 = String.valueOf(nextMove8);
-                                                    nM9 = String.valueOf(nextMove9);
-                                                    nM10 = String.valueOf(nextMove10);
+                                                    StringBuilder next = new StringBuilder(10);
+                                                    next.append(nextMove1);
+                                                    next.append(nextMove2);
+                                                    next.append(nextMove3);
+                                                    next.append(nextMove4);
+                                                    next.append(nextMove5);
+                                                    next.append(nextMove6);
+                                                    next.append(nextMove7);
+                                                    next.append(nextMove8);
+                                                    next.append(nextMove9);
+                                                    next.append(nextMove10);
 
-                                                    //String next = String.valueOf(nM1) + nM2 + nM3 + nM4 + nM5 + nM6 + nM7 + nM8 + nM9 + nM10;
-                                                    StringBuilder next = new StringBuilder();
-                                                    next.append(nM1);
-                                                    next.append(nM2);
-                                                    next.append(nM3);
-                                                    next.append(nM4);
-                                                    next.append(nM5);
-                                                    next.append(nM6);
-                                                    next.append(nM7);
-                                                    next.append(nM8);
-                                                    next.append(nM9);
-                                                    next.append(nM10);
-
-                                                    String[] tempBoard = {nM1, nM2, nM3, nM4, nM5, nM6, nM7, nM8, nM9, nM10};
+                                                    String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB1 = String.valueOf(loseBoards.get(x).charAt(0));
-                                                        lB2 = String.valueOf(loseBoards.get(x).charAt(1));
-                                                        lB3 = String.valueOf(loseBoards.get(x).charAt(2));
-                                                        lB4 = String.valueOf(loseBoards.get(x).charAt(3));
-                                                        lB5 = String.valueOf(loseBoards.get(x).charAt(4));
-                                                        lB6 = String.valueOf(loseBoards.get(x).charAt(5));
-                                                        lB7 = String.valueOf(loseBoards.get(x).charAt(6));
-                                                        lB8 = String.valueOf(loseBoards.get(x).charAt(7));
-                                                        lB9 = String.valueOf(loseBoards.get(x).charAt(8));
-                                                        lB10 = String.valueOf(loseBoards.get(x).charAt(9));
+                                                        lB = String.valueOf(loseBoards.get(x));
 
-                                                        if (tempBoard[0].equals(lB1) && tempBoard[1].equals(lB2) && tempBoard[2].equals(lB3) && tempBoard[3].equals(lB4) && tempBoard[4].equals(lB5) && tempBoard[5].equals(lB6) && tempBoard[6].equals(lB7) && tempBoard[7].equals(lB8) && tempBoard[8].equals(lB9) && tempBoard[9].equals(lB10)){
+                                                        if (tempBoard.equals(lB)){
                                                             tempState = true;
                                                             localLoseBoards.add(String.valueOf(next));
                                                             if (tempState == true) {
@@ -1155,18 +851,9 @@ public class MyPlayer {
                                                     }
 
                                                     for (int x = 0; x < winBoards.size(); x++) {
-                                                        wB1 = String.valueOf(winBoards.get(x).charAt(0));
-                                                        wB2 = String.valueOf(winBoards.get(x).charAt(1));
-                                                        wB3 = String.valueOf(winBoards.get(x).charAt(2));
-                                                        wB4 = String.valueOf(winBoards.get(x).charAt(3));
-                                                        wB5 = String.valueOf(winBoards.get(x).charAt(4));
-                                                        wB6 = String.valueOf(winBoards.get(x).charAt(5));
-                                                        wB7 = String.valueOf(winBoards.get(x).charAt(6));
-                                                        wB8 = String.valueOf(winBoards.get(x).charAt(7));
-                                                        wB9 = String.valueOf(winBoards.get(x).charAt(8));
-                                                        wB10 = String.valueOf(winBoards.get(x).charAt(9));
+                                                        wB = String.valueOf(winBoards.get(x));
 
-                                                        if (tempBoard[0].equals(wB1) && tempBoard[1].equals(wB2) && tempBoard[2].equals(wB3) && tempBoard[3].equals(wB4) && tempBoard[4].equals(wB5) && tempBoard[5].equals(wB6) && tempBoard[6].equals(wB7) && tempBoard[7].equals(wB8) && tempBoard[8].equals(wB9) && tempBoard[9].equals(wB10)){
+                                                        if (tempBoard.equals(wB)){
                                                             localWinBoards.add(String.valueOf(next));
                                                         }
                                                     }
