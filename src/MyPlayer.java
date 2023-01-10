@@ -6,11 +6,20 @@ import java.util.concurrent.ExecutionException;
 public class MyPlayer {
 
     ArrayList <Board> allBoards = new ArrayList <Board>();
+    ArrayList <String> loseBoards = new ArrayList <String> ();
+    ArrayList <String> winBoards = new ArrayList <String> ();
+
 
     public Chip[][] gameBoard;
     public int[] columns;
 
     public MyPlayer() {
+
+        //loseBoards.add("1000000000"); //why still able to identify lose boards without this? maybe add to prevent outOfBounds?
+        //System.out.println(loseBoards);
+
+        //winBoards.add("1100000000");
+        //System.out.println(winBoards);
 
         columns = new int[10];
 
@@ -151,14 +160,6 @@ public class MyPlayer {
         int nextMove9 = 0;
         int nextMove10 = 0;
 
-        ArrayList <String> loseBoards = new ArrayList <String> ();
-        loseBoards.add("1000000000"); //why still able to identify lose boards without this? maybe add to prevent outOfBounds?
-        //System.out.println(loseBoards);
-
-        ArrayList <String> winBoards = new ArrayList <String> ();
-        winBoards.add("1100000000");
-        //System.out.println(winBoards);
-
         /*ArrayList <String> nextLoseBoards = new ArrayList <String>();
         ArrayList <String> nextWinBoards = new ArrayList <String>();*/
 
@@ -193,6 +194,17 @@ public class MyPlayer {
 
                                                 String nextBestMoveLose = null;
                                                 String nextBestMoveWin = null;
+
+                                                String nextBestMoveLose1 = null;
+                                                String nextBestMoveLose2 = null;
+                                                String nextBestMoveLose3 = null;
+                                                String nextBestMoveLose4 = null;
+                                                String nextBestMoveLose5 = null;
+                                                String nextBestMoveLose6 = null;
+                                                String nextBestMoveLose7 = null;
+                                                String nextBestMoveLose8 = null;
+                                                String nextBestMoveLose9 = null;
+                                                String nextBestMoveLose10 = null;
 
                                                 Board currentBoard = new Board(a, b, c, d, e, f, g, h, i, j);
 
@@ -238,7 +250,7 @@ public class MyPlayer {
                                                 nextMove9 = counter9;
                                                 nextMove10 = counter10;
 
-                                                String lB;
+                                                //String lB;
                                                 String wB;
 
                                                 for (int z = counter10 - 1; z >= 0; z--) {
@@ -259,7 +271,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -269,19 +281,32 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                    /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -318,7 +343,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -328,19 +353,34 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                    /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
+
+
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -380,7 +420,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -390,19 +430,32 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                    /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -445,7 +498,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -455,19 +508,32 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                    /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -513,7 +579,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -523,19 +589,32 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                   /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -584,7 +663,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -594,19 +673,32 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                   /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -658,7 +750,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -668,19 +760,32 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                   /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -735,7 +840,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -745,19 +850,32 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                   /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -815,7 +933,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -825,19 +943,32 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                  /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -898,7 +1029,7 @@ public class MyPlayer {
                                                     String tempBoard = String.valueOf(next);
 
                                                     for (int x = 0; x < loseBoards.size(); x++) {
-                                                        lB = String.valueOf(loseBoards.get(x));
+                                                        String lB = String.valueOf(loseBoards.get(x));
 
                                                         if (tempBoard.equals(lB)){
                                                             /*tempState = true;
@@ -908,19 +1039,32 @@ public class MyPlayer {
                                                             }*/
 
                                                             //localLoseBoards.add(String.valueOf(next));
-                                                            nextBestMoveLose = String.valueOf(next);
+                                                            //nextBestMoveLose = String.valueOf(next);
+
+                                                            nextBestMoveLose1 = String.valueOf(nextMove1);
+                                                            nextBestMoveLose2 = String.valueOf(nextMove2);
+                                                            nextBestMoveLose3 = String.valueOf(nextMove3);
+                                                            nextBestMoveLose4 = String.valueOf(nextMove4);
+                                                            nextBestMoveLose5 = String.valueOf(nextMove5);
+                                                            nextBestMoveLose6 = String.valueOf(nextMove6);
+                                                            nextBestMoveLose7 = String.valueOf(nextMove7);
+                                                            nextBestMoveLose8 = String.valueOf(nextMove8);
+                                                            nextBestMoveLose9 = String.valueOf(nextMove9);
+                                                            nextBestMoveLose10 = String.valueOf(nextMove10);
+
                                                             state = true;
+                                                            break;
                                                         }
                                                     }
 
-                                                    for (int x = 0; x < winBoards.size(); x++) {
+                                                   /*for (int x = 0; x < winBoards.size(); x++) {
                                                         wB = String.valueOf(winBoards.get(x));
 
                                                         if (tempBoard.equals(wB)){
                                                             //localWinBoards.add(String.valueOf(next));
                                                             nextBestMoveWin = String.valueOf(next);
                                                         }
-                                                    }
+                                                    }*/
 
                                                     //System.out.println(Arrays.toString(tempBoard));
                                                     //tempCounter = String.valueOf(nextMove1, nextMove2, nextMove3);
@@ -958,16 +1102,16 @@ public class MyPlayer {
                                                     currentBoard.counter9 = i;
                                                     currentBoard.counter10 = j;
 
-                                                    currentBoard.best1 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(0)));
-                                                    currentBoard.best2 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(1)));
-                                                    currentBoard.best3 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(2)));
-                                                    currentBoard.best4 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(3)));
-                                                    currentBoard.best5 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(4)));
-                                                    currentBoard.best6 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(5)));
-                                                    currentBoard.best7 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(6)));
-                                                    currentBoard.best8 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(7)));
-                                                    currentBoard.best9 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(8)));
-                                                    currentBoard.best10 = Integer.parseInt(String.valueOf(nextBestMoveLose.charAt(9)));
+                                                    currentBoard.best1 = Integer.parseInt(nextBestMoveLose1);
+                                                    currentBoard.best2 = Integer.parseInt(nextBestMoveLose2);
+                                                    currentBoard.best3 = Integer.parseInt(nextBestMoveLose3);
+                                                    currentBoard.best4 = Integer.parseInt(nextBestMoveLose4);
+                                                    currentBoard.best5 = Integer.parseInt(nextBestMoveLose5);
+                                                    currentBoard.best6 = Integer.parseInt(nextBestMoveLose6);
+                                                    currentBoard.best7 = Integer.parseInt(nextBestMoveLose7);
+                                                    currentBoard.best8 = Integer.parseInt(nextBestMoveLose8);
+                                                    currentBoard.best9 = Integer.parseInt(nextBestMoveLose9);
+                                                    currentBoard.best10 = Integer.parseInt(nextBestMoveLose10);
                                                     currentBoard.coordinates();
 
                                                     //System.out.println("winning");
@@ -984,28 +1128,86 @@ public class MyPlayer {
 
                                                         //System.out.println("next best moves real: " + nextBestMove);
 
-                                                        currentBoard.counter1 = a;
-                                                        currentBoard.counter2 = b;
-                                                        currentBoard.counter3 = c;
-                                                        currentBoard.counter4 = d;
-                                                        currentBoard.counter5 = e;
-                                                        currentBoard.counter6 = f;
-                                                        currentBoard.counter7 = g;
-                                                        currentBoard.counter8 = h;
-                                                        currentBoard.counter9 = i;
-                                                        currentBoard.counter10 = j;
-
-                                                        currentBoard.best1 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(0)));
-                                                        currentBoard.best2 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(1)));
-                                                        currentBoard.best3 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(2)));
-                                                        currentBoard.best4 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(3)));
-                                                        currentBoard.best5 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(4)));
-                                                        currentBoard.best6 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(5)));
-                                                        currentBoard.best7 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(6)));
-                                                        currentBoard.best8 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(7)));
-                                                        currentBoard.best9 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(8)));
-                                                        currentBoard.best10 = Integer.parseInt(String.valueOf(nextBestMoveWin.charAt(9)));
-                                                        currentBoard.coordinates();
+//                                                        currentBoard.counter1 = a;
+//                                                        currentBoard.counter2 = b;
+//                                                        currentBoard.counter3 = c;
+//                                                        currentBoard.counter4 = d;
+//                                                        currentBoard.counter5 = e;
+//                                                        currentBoard.counter6 = f;
+//                                                        currentBoard.counter7 = g;
+//                                                        currentBoard.counter8 = h;
+//                                                        currentBoard.counter9 = i;
+//
+//                                                        int currentBoardCounter = 0;
+//
+//                                                        if(a > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//                                                        if(b > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//                                                        if(c > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//                                                        if(d > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//                                                        if(e > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//                                                        if(f > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//                                                        if(g > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//                                                        if(h > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//                                                        if(i > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//                                                        if(j > 0){
+//                                                            currentBoardCounter++;
+//                                                        }
+//
+//                                                       int randomColumn = (int)(Math.random()*currentBoardCounter);
+//
+//                                                        int randomRow = 0;
+//
+//                                                        if(randomColumn == 0){
+//                                                            randomRow = (int)(Math.random()*a+1);
+//                                                        }
+//                                                        if(randomColumn == 1){
+//                                                            randomRow = (int)(Math.random()*b);
+//                                                        }
+//                                                        if(randomColumn == 2){
+//                                                            randomRow = (int)(Math.random()*c);
+//                                                        }
+//                                                        if(randomColumn == 3){
+//                                                            randomRow = (int)(Math.random()*d);
+//                                                        }
+//                                                        if(randomColumn == 4){
+//                                                            randomRow = (int)(Math.random()*e);
+//                                                        }
+//                                                        if(randomColumn == 5){
+//                                                            randomRow = (int)(Math.random()*f);
+//                                                        }
+//                                                        if(randomColumn == 6){
+//                                                            randomRow = (int)(Math.random()*g);
+//                                                        }
+//                                                        if(randomColumn == 7){
+//                                                            randomRow = (int)(Math.random()*h);
+//                                                        }
+//                                                        if(randomColumn == 8){
+//                                                            randomRow = (int)(Math.random()*i);
+//                                                        }
+//                                                        if(randomColumn == 9){
+//                                                            randomRow = (int)(Math.random()*j);
+//                                                        }
+//
+//                                                        currentBoard.xBest = randomColumn;
+//                                                        currentBoard.yBest = randomRow;
                                                     }
                                                     //System.out.println("loosing");
                                                 }

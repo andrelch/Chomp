@@ -89,23 +89,23 @@ public class Board {
         }
         else if (difference6 > 0){
             xBest = 5;
-            yBest = 0;
+            yBest = best6;
         }
         else if (difference7 > 0){
             xBest = 6;
-            yBest = 0;
+            yBest = best7;
         }
         else if (difference8 > 0){
             xBest = 7;
-            yBest = 0;
+            yBest = best8;
         }
         else if (difference9 > 0){
             xBest = 8;
-            yBest = 0;
+            yBest = best9;
         }
         else if (difference10 > 0){
             xBest = 9;
-            yBest = 0;
+            yBest = best10;
         }
 
         //System.out.println(xBest + "," + yBest);
