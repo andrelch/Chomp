@@ -251,7 +251,7 @@ public class MyPlayer {
                                                 nextMove10 = counter10;
 
                                                 //String lB;
-                                                String wB;
+                                                //String wB;
 
                                                 for (int z = counter10 - 1; z >= 0; z--) {
                                                     nextMove10 = z;
@@ -319,6 +319,15 @@ public class MyPlayer {
                                                     //nextMoves.add(String.valueOf(next));
                                                 }
 
+                                                nextMove1 = counter1;
+                                                nextMove2 = counter2;
+                                                nextMove3 = counter3;
+                                                nextMove4 = counter4;
+                                                nextMove5 = counter5;
+                                                nextMove6 = counter6;
+                                                nextMove7 = counter7;
+                                                nextMove8 = counter8;
+                                                nextMove9 = counter9;
                                                 nextMove10 = counter10;
 
                                                 for (int z = counter9 - 1; z >= 0; z--) {
@@ -393,7 +402,16 @@ public class MyPlayer {
                                                     //nextMoves.add(String.valueOf(next));
                                                 }
 
+                                                nextMove1 = counter1;
+                                                nextMove2 = counter2;
+                                                nextMove3 = counter3;
+                                                nextMove4 = counter4;
+                                                nextMove5 = counter5;
+                                                nextMove6 = counter6;
+                                                nextMove7 = counter7;
+                                                nextMove8 = counter8;
                                                 nextMove9 = counter9;
+                                                nextMove10 = counter10;
 
                                                 for (int z = counter8 - 1; z >= 0; z--) {
                                                     nextMove8 = z;
@@ -468,7 +486,16 @@ public class MyPlayer {
                                                     //nextMoves.add(String.valueOf(next));
                                                 }
 
+                                                nextMove1 = counter1;
+                                                nextMove2 = counter2;
+                                                nextMove3 = counter3;
+                                                nextMove4 = counter4;
+                                                nextMove5 = counter5;
+                                                nextMove6 = counter6;
+                                                nextMove7 = counter7;
                                                 nextMove8 = counter8;
+                                                nextMove9 = counter9;
+                                                nextMove10 = counter10;
 
                                                 for (int z = counter7 - 1; z >= 0; z--) {
                                                     nextMove7 = z;
@@ -546,7 +573,16 @@ public class MyPlayer {
                                                     //nextMoves.add(String.valueOf(next));
                                                 }
 
+                                                nextMove1 = counter1;
+                                                nextMove2 = counter2;
+                                                nextMove3 = counter3;
+                                                nextMove4 = counter4;
+                                                nextMove5 = counter5;
+                                                nextMove6 = counter6;
                                                 nextMove7 = counter7;
+                                                nextMove8 = counter8;
+                                                nextMove9 = counter9;
+                                                nextMove10 = counter10;
 
                                                 for (int z = counter6 - 1; z >= 0; z--) {
                                                     nextMove6 = z;
@@ -627,7 +663,16 @@ public class MyPlayer {
                                                     //nextMoves.add(String.valueOf(next));
                                                 }
 
+                                                nextMove1 = counter1;
+                                                nextMove2 = counter2;
+                                                nextMove3 = counter3;
+                                                nextMove4 = counter4;
+                                                nextMove5 = counter5;
                                                 nextMove6 = counter6;
+                                                nextMove7 = counter7;
+                                                nextMove8 = counter8;
+                                                nextMove9 = counter9;
+                                                nextMove10 = counter10;
 
                                                 for (int z = counter5 - 1; z >= 0; z--) {
                                                     nextMove5 = z;
@@ -711,7 +756,16 @@ public class MyPlayer {
                                                     //nextMoves.add(String.valueOf(next));
                                                 }
 
+                                                nextMove1 = counter1;
+                                                nextMove2 = counter2;
+                                                nextMove3 = counter3;
+                                                nextMove4 = counter4;
                                                 nextMove5 = counter5;
+                                                nextMove6 = counter6;
+                                                nextMove7 = counter7;
+                                                nextMove8 = counter8;
+                                                nextMove9 = counter9;
+                                                nextMove10 = counter10;
 
                                                 for (int z = counter4 - 1; z >= 0; z--) {
                                                     nextMove4 = z;
@@ -798,7 +852,16 @@ public class MyPlayer {
                                                     //nextMoves.add(String.valueOf(next));
                                                 }
 
+                                                nextMove1 = counter1;
+                                                nextMove2 = counter2;
+                                                nextMove3 = counter3;
                                                 nextMove4 = counter4;
+                                                nextMove5 = counter5;
+                                                nextMove6 = counter6;
+                                                nextMove7 = counter7;
+                                                nextMove8 = counter8;
+                                                nextMove9 = counter9;
+                                                nextMove10 = counter10;
 
                                                 for (int z = counter3 - 1; z >= 0; z--) {
                                                     nextMove3 = z;
@@ -888,7 +951,16 @@ public class MyPlayer {
                                                     //nextMoves.add(String.valueOf(next));
                                                 }
 
+                                                nextMove1 = counter1;
+                                                nextMove2 = counter2;
                                                 nextMove3 = counter3;
+                                                nextMove4 = counter4;
+                                                nextMove5 = counter5;
+                                                nextMove6 = counter6;
+                                                nextMove7 = counter7;
+                                                nextMove8 = counter8;
+                                                nextMove9 = counter9;
+                                                nextMove10 = counter10;
 
                                                 for (int z = counter2 - 1; z >= 0; z--) {
                                                     nextMove2 = z;
@@ -981,7 +1053,16 @@ public class MyPlayer {
                                                     //nextMoves.add(String.valueOf(next));
                                                 }
 
+                                                nextMove1 = counter1;
                                                 nextMove2 = counter2;
+                                                nextMove3 = counter3;
+                                                nextMove4 = counter4;
+                                                nextMove5 = counter5;
+                                                nextMove6 = counter6;
+                                                nextMove7 = counter7;
+                                                nextMove8 = counter8;
+                                                nextMove9 = counter9;
+                                                nextMove10 = counter10;
 
                                                 for (int z = counter1 - 1; z > 0; z--) {
                                                     nextMove1 = z;
@@ -1078,6 +1159,15 @@ public class MyPlayer {
                                                 }
 
                                                 nextMove1 = counter1;
+                                                nextMove2 = counter2;
+                                                nextMove3 = counter3;
+                                                nextMove4 = counter4;
+                                                nextMove5 = counter5;
+                                                nextMove6 = counter6;
+                                                nextMove7 = counter7;
+                                                nextMove8 = counter8;
+                                                nextMove9 = counter9;
+                                                nextMove10 = counter10;
 
                                                 if (state == true) {
                                                     //System.out.println("next moves: " + nextMoves);
@@ -1128,86 +1218,87 @@ public class MyPlayer {
 
                                                         //System.out.println("next best moves real: " + nextBestMove);
 
-//                                                        currentBoard.counter1 = a;
-//                                                        currentBoard.counter2 = b;
-//                                                        currentBoard.counter3 = c;
-//                                                        currentBoard.counter4 = d;
-//                                                        currentBoard.counter5 = e;
-//                                                        currentBoard.counter6 = f;
-//                                                        currentBoard.counter7 = g;
-//                                                        currentBoard.counter8 = h;
-//                                                        currentBoard.counter9 = i;
-//
-//                                                        int currentBoardCounter = 0;
-//
-//                                                        if(a > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//                                                        if(b > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//                                                        if(c > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//                                                        if(d > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//                                                        if(e > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//                                                        if(f > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//                                                        if(g > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//                                                        if(h > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//                                                        if(i > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//                                                        if(j > 0){
-//                                                            currentBoardCounter++;
-//                                                        }
-//
-//                                                       int randomColumn = (int)(Math.random()*currentBoardCounter);
-//
-//                                                        int randomRow = 0;
-//
-//                                                        if(randomColumn == 0){
-//                                                            randomRow = (int)(Math.random()*a+1);
-//                                                        }
-//                                                        if(randomColumn == 1){
-//                                                            randomRow = (int)(Math.random()*b);
-//                                                        }
-//                                                        if(randomColumn == 2){
-//                                                            randomRow = (int)(Math.random()*c);
-//                                                        }
-//                                                        if(randomColumn == 3){
-//                                                            randomRow = (int)(Math.random()*d);
-//                                                        }
-//                                                        if(randomColumn == 4){
-//                                                            randomRow = (int)(Math.random()*e);
-//                                                        }
-//                                                        if(randomColumn == 5){
-//                                                            randomRow = (int)(Math.random()*f);
-//                                                        }
-//                                                        if(randomColumn == 6){
-//                                                            randomRow = (int)(Math.random()*g);
-//                                                        }
-//                                                        if(randomColumn == 7){
-//                                                            randomRow = (int)(Math.random()*h);
-//                                                        }
-//                                                        if(randomColumn == 8){
-//                                                            randomRow = (int)(Math.random()*i);
-//                                                        }
-//                                                        if(randomColumn == 9){
-//                                                            randomRow = (int)(Math.random()*j);
-//                                                        }
-//
-//                                                        currentBoard.xBest = randomColumn;
-//                                                        currentBoard.yBest = randomRow;
+                                                        currentBoard.counter1 = a;
+                                                        currentBoard.counter2 = b;
+                                                        currentBoard.counter3 = c;
+                                                        currentBoard.counter4 = d;
+                                                        currentBoard.counter5 = e;
+                                                        currentBoard.counter6 = f;
+                                                        currentBoard.counter7 = g;
+                                                        currentBoard.counter8 = h;
+                                                        currentBoard.counter9 = i;
+                                                        currentBoard.counter10 = j;
+
+                                                        int currentBoardCounter = 0;
+
+                                                        if(a > 0){
+                                                            currentBoardCounter++;
+                                                        }
+                                                        if(b > 0){
+                                                            currentBoardCounter++;
+                                                        }
+                                                        if(c > 0){
+                                                            currentBoardCounter++;
+                                                        }
+                                                        if(d > 0){
+                                                            currentBoardCounter++;
+                                                        }
+                                                        if(e > 0){
+                                                            currentBoardCounter++;
+                                                        }
+                                                        if(f > 0){
+                                                            currentBoardCounter++;
+                                                        }
+                                                        if(g > 0){
+                                                            currentBoardCounter++;
+                                                        }
+                                                        if(h > 0){
+                                                            currentBoardCounter++;
+                                                        }
+                                                        if(i > 0){
+                                                            currentBoardCounter++;
+                                                        }
+                                                        if(j > 0){
+                                                            currentBoardCounter++;
+                                                        }
+
+                                                       int randomColumn = (int)(Math.random()*currentBoardCounter);
+
+                                                        int randomRow = 0;
+
+                                                        if(randomColumn == 0){
+                                                            randomRow = (int)(Math.random()*(a-1))+1;
+                                                        }
+                                                        if(randomColumn == 1){
+                                                            randomRow = (int)(Math.random()*b);
+                                                        }
+                                                        if(randomColumn == 2){
+                                                            randomRow = (int)(Math.random()*c);
+                                                        }
+                                                        if(randomColumn == 3){
+                                                            randomRow = (int)(Math.random()*d);
+                                                        }
+                                                        if(randomColumn == 4){
+                                                            randomRow = (int)(Math.random()*e);
+                                                        }
+                                                        if(randomColumn == 5){
+                                                            randomRow = (int)(Math.random()*f);
+                                                        }
+                                                        if(randomColumn == 6){
+                                                            randomRow = (int)(Math.random()*g);
+                                                        }
+                                                        if(randomColumn == 7){
+                                                            randomRow = (int)(Math.random()*h);
+                                                        }
+                                                        if(randomColumn == 8){
+                                                            randomRow = (int)(Math.random()*i);
+                                                        }
+                                                        if(randomColumn == 9){
+                                                            randomRow = (int)(Math.random()*j);
+                                                        }
+
+                                                        currentBoard.xBest = randomColumn;
+                                                        currentBoard.yBest = randomRow;
                                                     }
                                                     //System.out.println("loosing");
                                                 }
